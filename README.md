@@ -3,9 +3,9 @@
 Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la apertura de una papelera y gestiona su estado de llenado.
 
 ## 👥 Integrantes
-* **Marlon Barco Bernal** - Responsable de Software / Validación 
-* **Mario Lago Fernández** - Responsable de Hardware / Git
-* **Pablo Martínez Fernández** - Responsable de Hardware / Validación
+* **Marlon Barco Bernal** - Responsable de Software / Integración
+* **Mario Lago Fernández** - Responsable de Hardware / Software
+* **Pablo Martínez Fernández** - Responsable de Hardware / Documentación
 * **Xavier Pardo Guerreiro** - Responsable de Documentación / Validación
 
 ## 🚀 Funcionalidades

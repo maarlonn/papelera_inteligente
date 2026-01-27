@@ -1,14 +1,14 @@
-# 🗑️ Papelera Inteligente (SCTR)
+#  Papelera Inteligente (SCTR)
 
 Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la apertura de una papelera y gestiona su estado de llenado.
 
-## 👥 Integrantes
+##  Integrantes
 * **Marlon Barco Bernal** - Responsable de Software / Integración
 * **Mario Lago Fernández** - Responsable de Hardware / Software
 * **Pablo Martínez Fernández** - Responsable de Hardware / Documentación
 * **Xavier Pardo Guerreiro** - Responsable de Documentación / Validación
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 * **Apertura Dual:** Mediante sensor de ultrasonidos (Auto) o pulsador (Manual).
 * **Indicadores LED:**
     * 🟢 Verde: Lista / Vacía.
@@ -17,7 +17,7 @@ Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la a
     * 🔴 Rojo: Papelera LLENA (Bloqueo tras 3 usos).
 * **Lógica FSM:** Implementación basada en tablas (**Table-Driven FSM**).
 
-## 🔌 Conexión de Hardware (Pinout)
+##  Conexión de Hardware (Pinout)
 | Componente | Pin GPIO |
 | :--- | :--- |
 | Servomotor | GPIO 15 |

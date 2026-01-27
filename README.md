@@ -1,33 +1,30 @@
-# 🗑️ Papelera Inteligente (SCTR)
+# Rama de Validacion de Hardware
 
-Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la apertura de una papelera y gestiona su estado de llenado.
+Esta rama contiene las pruebas unitarias para verificar el funcionamiento individual y conjunto de los perifericos de la Papelera Inteligente.
 
-## 👥 Integrantes
-* **Marlon [Tu Apellido]** - Responsable de Software / Git
-* **[Nombre Compañero]** - Responsable de Hardware / Validación
+## Estructura de Pruebas
+Los codigos se encuentran en la carpeta pruebas_unitarias/:
+* **test_led_blink.c**: Verificacion basica de salida digital (LED Verde).
+* **test_boton_alarma.c**: Prueba de entrada (Pulsador) y salida de potencia (Modulo Alarma U2).
+* **test_sensor_servo.c**: Validacion de la logica principal (Deteccion de distancia y movimiento PWM).
+* **test_sistema_completo.c**: Test de integracion de todos los componentes de forma simultanea.
 
-## 🚀 Funcionalidades
-* **Apertura Dual:** Mediante sensor de ultrasonidos (Auto) o pulsador (Manual).
-* **Indicadores LED:**
-    * 🟢 Verde: Lista / Vacía.
-    * 🟡 Amarillo: Apertura automática detectada.
-    * 🟠 Naranja: Apertura manual detectada.
-    * 🔴 Rojo: Papelera LLENA (Bloqueo tras 3 usos).
-* **Lógica FSM:** Implementación basada en tablas (**Table-Driven FSM**).
+## Mapeo de Pines Utilizado
+| Componente | GPIO | Pin Fisico |
+| :--- | :--- | :--- |
+| Servomotor | 9 | 12 |
+| Sensor (Trig) | 16 | 21 |
+| Sensor (Echo) | 17 | 22 |
+| Buzzer | 14 | 19 |
+| Pulsador | 22 | 29 |
+| LED Rojo | 18 | 24 |
+| LED Verde | 19 | 25 |
+| LED Amarillo | 20 | 26 |
+| LED Naranja | 21 | 27 |
 
-## 🔌 Conexión de Hardware (Pinout)
-| Componente | Pin GPIO |
-| :--- | :--- |
-| Servomotor | GPIO 15 |
-| HC-SR04 (Trig) | GPIO 16 |
-| HC-SR04 (Echo) | GPIO 17 |
-| LED Rojo | GPIO 18 |
-| LED Verde | GPIO 19 |
-| LED Amarillo | GPIO 20 |
-| LED Naranja | GPIO 21 |
-| Pulsador | GPIO 22 |
-
-## 🛠️ Instalación y Compilación
-1. Clonar el repositorio:
-   ```bash
-   git clone [URL_DE_TU_REPO]
+## Instrucciones de Uso
+Para ejecutar cualquiera de las pruebas disponibles:
+1. Copiar el archivo de interes al archivo principal:
+   `cp pruebas_unitarias/nombre_del_test.c main.c`
+2. Realizar el proceso de compilacion mediante CMake y Make.
+3. Cargar el archivo .uf2 resultante en la Raspberry Pi Pico.

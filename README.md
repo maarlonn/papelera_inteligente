@@ -5,7 +5,7 @@ Esta rama contiene las pruebas unitarias para verificar el funcionamiento indivi
 ## Estructura de Pruebas
 Los codigos se encuentran en la carpeta pruebas_unitarias/:
 * **test_led_blink.c**: Verificacion basica de salida digital (LED Verde).
-* **test_boton_alarma.c**: Prueba de entrada (Pulsador) y salida de potencia (Modulo Alarma U2).
+* **test_boton_alarma.c**: Prueba de entrada (Pulsador) y salida de potencia (Buzzer).
 * **test_sensor_servo.c**: Validacion de la logica principal (Deteccion de distancia y movimiento PWM).
 * **test_sistema_completo.c**: Test de integracion de todos los componentes de forma simultanea.
 

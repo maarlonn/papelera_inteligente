@@ -42,7 +42,7 @@ El firmware utiliza un bucle de control no bloqueante para garantizar la respues
 3. **Temporización:** Cierre automático tras 3 segundos de inactividad.
 
 ##  Estructura del Proyecto
-* **Rama `main.c`: Código definitivo con la lógica de control integrada (4 usos y reset de 5s).
-* **Rama `pruebas_unitarias/`: Tests individuales para validación de cada componente hardware.
+* **Rama `main.c`**: Código definitivo con la lógica de control integrada (4 usos y reset de 5s).
+* **Rama `pruebas_unitarias/`**: Tests individuales para validación de cada componente hardware.
 * **Rama `estudio-latencia`**: Contiene el código de telemetría y el informe técnico sobre Jitter y tiempos de respuesta.
 

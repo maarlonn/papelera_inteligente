@@ -14,7 +14,7 @@ Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la a
 * **Reset de Seguridad:** Reinicio del contador de usos y desbloqueo mediante pulsación larga de **5 segundos**.
 * **Indicadores LED de Estado:**
     * 🟢 **Verde:** Sistema operativo y con capacidad disponible (GP19).
-    * 🟡 **Amarillo:** Apertura automática detectada (GP20).
+    * 🔵 **Azul:** Apertura automática detectada (GP20).
     * 🟠 **Naranja:** Apertura manual detectada (GP21).
     * 🔴 **Rojo:** Papelera **LLENA**. Bloqueo de seguridad activo (GP18).
 * **Feedback Sonoro:** Buzzer activo (GP14) durante 2 segundos en cada apertura y pitido de confirmación tras reset.

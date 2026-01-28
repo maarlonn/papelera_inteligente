@@ -1,35 +1,16 @@
-#  Papelera Inteligente (SCTR)
+# Sistema de Control de Acceso con Test de Latencia
 
-Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la apertura de una papelera y gestiona su estado de llenado.
+Este proyecto implementa un control de barrera mediante servo y sensor ultrasónico utilizando la Raspberry Pi Pico SDK.
 
-##  Integrantes
-* **Marlon Barco Bernal** - Responsable de Software / Integración
-* **Mario Lago Fernández** - Responsable de Hardware / Software
-* **Pablo Martínez Fernández** - Responsable de Hardware / Documentación
-* **Xavier Pardo Guerreiro** - Responsable de Documentación / Validación
+## Explicación del Test de Rendimiento (Testing)
 
-##  Funcionalidades
-* **Apertura Dual:** Mediante sensor de ultrasonidos (Auto) o pulsador (Manual).
-* **Indicadores LED:**
-    * 🟢 Verde: Lista / Vacía.
-    * 🟡 Amarillo: Apertura automática detectada.
-    * 🟠 Naranja: Apertura manual detectada.
-    * 🔴 Rojo: Papelera LLENA (Bloqueo tras 3 usos).
-* **Lógica FSM:** Implementación basada en tablas (**Table-Driven FSM**).
+El código incluye un módulo de instrumentación para medir el rendimiento en tiempo real del bucle de control ("Hardware in the loop"). El objetivo es validar que el sistema reacciona dentro de los márgenes de tiempo esperados.
 
-##  Conexión de Hardware (Pinout)
-| Componente | Pin GPIO |
-| :--- | :--- |
-| Servomotor | GPIO 15 |
-| HC-SR04 (Trig) | GPIO 16 |
-| HC-SR04 (Echo) | GPIO 17 |
-| LED Rojo | GPIO 18 |
-| LED Verde | GPIO 19 |
-| LED Amarillo | GPIO 20 |
-| LED Naranja | GPIO 21 |
-| Pulsador | GPIO 22 |
+### Métricas capturadas:
+1.  **Latencia de Decisión:** Se mide el tiempo exacto en microsegundos (`us`) desde el inicio del bucle de lectura (`t_inicio_lectura`) hasta el momento en que se toma la decisión de abrir la barrera (`t_final_decision`).
+2.  **Jitter (Variación):** Se calcula la diferencia entre la latencia máxima y mínima registrada durante la ejecución (`test_max_lat - test_min_lat`).
+3.  **Trigger de Hardware (Probe):** El **GPIO 26 (`PIN_PROBE_TEST`)** actúa como una sonda física. Se pone en ALTO (High) justo antes de mover el servo y en BAJO (Low) inmediatamente después. Esto permite conectar un **osciloscopio** para medir externamente el tiempo de respuesta eléctrica y contrastarlo con los logs de software.
 
-## 🛠️ Instalación y Compilación
-1. Clonar el repositorio:
-   ```bash
-   git clone [URL_DE_TU_REPO]
+### Salida de datos:
+Los resultados se imprimen por puerto serie (USB) con el formato:
+`>> [TEST] Latencia: X us | Jitter: Y us | Muestras: Z`

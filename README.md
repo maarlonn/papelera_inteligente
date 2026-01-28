@@ -8,7 +8,7 @@ Proyecto de sistema embebido basado en **Raspberry Pi Pico** que automatiza la a
 * **Pablo Martínez Fernández** - Responsable de Hardware / Documentación
 * **Xavier Pardo Guerreiro** - Responsable de Documentación / Validación
 
-##  Funcionalidades Actualizadas
+##  Funcionalidades 
 * **Apertura Dual:** Detección por ultrasonidos (Auto) o pulsador físico (Manual).
 * **Sistema de Bloqueo Progresivo:** El sistema contabiliza los usos y entra en modo de seguridad (Bloqueo) al alcanzar los **4 usos** para evitar el desbordamiento.
 * **Reset de Seguridad:** Reinicio del contador de usos y desbloqueo mediante pulsación larga de **5 segundos**.
